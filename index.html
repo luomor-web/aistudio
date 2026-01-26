@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio | Creative Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css">
+</head>
+<body>
+
+    <!-- ===== 极光背景效果 ===== -->
+    <div class="aurora-bg">
+        <div class="aurora-layer aurora-1"></div>
+        <div class="aurora-layer aurora-2"></div>
+        <div class="aurora-layer aurora-3"></div>
+        <div class="aurora-layer aurora-4"></div>
+    </div>
+
+    <!-- ===== 背景网格 ===== -->
+    <div class="grid-bg"></div>
+    
+    <!-- ===== 鼠标跟随 ===== -->
+    <div class="cursor-follower"></div>
+
+    <!-- ===== 加载动画 ===== -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">AI</div>
+            <div class="loader-text">INITIALIZING...</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- ===== 导航栏 ===== -->
+    <nav>
+        <div class="logo">
+            <span class="logo-mark">AI</span>
+            <span class="logo-text">STUDIO</span>
+        </div>
+        <div class="menu-items">
+            <a href="#works">WORKS</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+            <a href="https://github.com/zhangchunsheng" target="_blank" class="github-link">GITHUB ↗</a>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ===== 移动端菜单 ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#works">WORKS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+        <a href="https://github.com/zhangchunsheng" target="_blank">GITHUB ↗</a>
+    </div>
+
+    <!-- ===== 全局背景效果 ===== -->
+    <div class="global-bg">
+        <!-- 大字背景 -->
+        <div class="hero-bg-text">
+            <span class="bg-letter">A</span>
+            <span class="bg-letter">I</span>
+        </div>
+        
+        <!-- 光线效果 -->
+        <div class="light-rays">
+            <div class="ray"></div>
+            <div class="ray"></div>
+            <div class="ray"></div>
+        </div>
+        
+        <!-- 粒子效果 -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- ===== Hero 区域 ===== -->
+    <header id="home">
+        <!-- 浮动元素 -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>AVAILABLE FOR WORK</span>
+            </div>
+            <div class="hero-tag">FULL STAAI DEVELOPER & CREATIVE CODER</div>
+            <h1>
+                <span class="line">EXPLORE THE</span>
+                <span class="line bold">DIGITAL <span class="highlight">UNIVERSE</span></span>
+            </h1>
+            <p class="hero-desc">我是<strong>AI</strong>，一名热爱技术与创意的全栈开发者。<br>专注于Web应用开发、API服务构建、以及各类创意工具的设计与实现。</p>
+            
+            <div class="hero-buttons">
+                <a href="#works" class="btn-primary">查看作品 <span>→</span></a>
+                <a href="https://github.com/zhangchunsheng" target="_blank" class="btn-secondary">GitHub <span>↗</span></a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-count="60">0</span>
+                    <span class="stat-label">PROJECTS</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="600">0</span>
+                    <span class="stat-label">API ENDPOINTS</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="20">0</span>
+                    <span class="stat-label">GAMES</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧装饰 -->
+        <div class="hero-visual">
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="filename">portfolio.js</span>
+                </div>
+                <pre><code><span class="keyword">const</span> developer = {
+  name: <span class="string">'AI'</span>,
+  role: <span class="string">'Full Stack'</span>,
+  skills: [<span class="string">'Web'</span>, <span class="string">'API'</span>, <span class="string">'AI'</span>],
+  projects: <span class="number">14</span>,
+  passion: <span class="boolean">true</span>
+};</code></pre>
+            </div>
+        </div>
+        
+        <div class="scroll-hint">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>SCROLL DOWN</span>
+        </div>
+    </header>
+
+    <!-- ===== 作品展示 ===== -->
+    <section class="works-section" id="works">
+        <div class="section-header">
+            <div class="section-tag">// 02</div>
+            <div class="section-title">SELECTED PROJECTS</div>
+            <div class="section-count">(14)</div>
+        </div>
+        
+        <div class="works-intro">
+            <p>我的项目涵盖娱乐、工具、金融、学习等多个领域，每一个都是用心打造的作品。</p>
+        </div>
+
+        <div class="grid" id="projectGrid"></div>
+        
+        <div class="works-more">
+            <a href="https://github.com/zhangchunsheng" target="_blank" class="more-link">
+                <span>VIEW ALL ON GITHUB</span>
+                <span>↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== 关于区域 ===== -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <div class="section-tag">// 01</div>
+            <div class="section-title">ABOUT ME</div>
+        </div>
+        <div class="about-content">
+            <div class="about-left">
+                <div class="about-card">
+                    <div class="card-glow"></div>
+                    <div class="card-avatar-wrapper">
+                        <img class="card-avatar" src="https://avatars.githubusercontent.com/u/831839?v=4" alt="AI" loading="lazy" crossorigin="anonymous" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="card-avatar-fallback" style="display:none;">AI</div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name">AI</div>
+                        <div class="card-role">全栈开发者</div>
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-stat">
+                            <span class="num">60</span>
+                            <span class="label">项目</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="num">600+</span>
+                            <span class="label">API</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="num">20+</span>
+                            <span class="label">游戏</span>
+                        </div>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/zhangchunsheng" target="_blank" class="card-link">
+                            <span>GitHub</span>
+                            <span>↗</span>
+                        </a>
+                        <a href="mailto:1097692918@qq.com" class="card-link">
+                            <span>Email</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <h3 class="about-title">WHO I AM</h3>
+                <p class="about-text">我是<strong>AI</strong>，一名热爱技术与创意的全栈开发者。专注于Web应用开发、API服务构建、以及各类创意工具的设计与实现。</p>
+                
+                <h3 class="about-title">WHAT I DO</h3>
+                <p class="about-text">我相信技术可以让生活更美好，每一个项目都是一次探索与创新的旅程。从视频播放器到AI预测系统，不断挑战自我。</p>
+                
+                <div class="skills-section">
+                    <h4 class="skills-title">TECH STAAI</h4>
+                    <div class="skills">
+                        <span class="skill-tag">全栈开发</span>
+                        <span class="skill-tag">API服务</span>
+                        <span class="skill-tag">Web应用</span>
+                        <span class="skill-tag">创意工具</span>
+                        <span class="skill-tag">数据分析</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 联系区域 ===== -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <div class="section-tag">// 03</div>
+            <div class="section-title">GET IN TOUCH</div>
+        </div>
+        
+        <div class="contact-hero">
+            <h2 class="contact-heading">LET'S <span class="highlight">WORK</span> TOGETHER</h2>
+            <p class="contact-desc">有任何项目合作或问题咨询，欢迎随时联系我</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-card wechat" data-copy="zhangchunsheng">
+                <div class="contact-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.139.045c.133 0 .241-.108.241-.241 0-.06-.023-.118-.039-.177l-.326-1.233a.49.49 0 01.178-.553C23.002 18.504 24 16.774 24 14.835c0-3.164-3.129-5.753-7.062-5.977zm-2.07 2.342c.535 0 .969.44.969.983a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.543.434-.983.97-.983zm4.141 0c.535 0 .969.44.969.983a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.543.434-.983.969-.983z"/>
+                    </svg>
+                </div>
+                <div class="contact-label">WECHAT</div>
+                <div class="contact-value">zhangchunsheng</div>
+                <div class="contact-hint">点击复制</div>
+            </div>
+            <div class="contact-card email" data-copy="1097692918@qq.com">
+                <div class="contact-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 6L12 13L2 6"/>
+                    </svg>
+                </div>
+                <div class="contact-label">EMAIL</div>
+                <div class="contact-value">1097692918@qq.com</div>
+                <div class="contact-hint">点击复制</div>
+            </div>
+            <div class="contact-card bilibili">
+                <div class="contact-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 01-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 01.16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906L17.813 4.653zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773H5.333zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
+                    </svg>
+                </div>
+                <div class="contact-label">BILIBILI / XIANYU</div>
+                <div class="contact-value">一路向北GP</div>
+            </div>
+            <a href="https://github.com/zhangchunsheng" target="_blank" class="contact-card github">
+                <div class="contact-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </div>
+                <div class="contact-label">GITHUB</div>
+                <div class="contact-value">@zhangchunsheng</div>
+                <div class="contact-hint">点击访问 ↗</div>
+            </a>
+        </div>
+        
+        <div class="contact-cta">
+            <a href="mailto:1097692918@qq.com" class="cta-btn">
+                <span>SEND MESSAGE</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer>
+        <!-- 页脚装饰线 -->
+        <div class="footer-decoration">
+            <div class="footer-line"></div>
+            <div class="footer-glow"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="footer-logo-mark">AI</span>
+                    <span class="footer-logo-text">STUDIO</span>
+                </div>
+                <p class="footer-tagline">Crafting Digital Experiences</p>
+            </div>
+            
+            <div class="footer-nav">
+                <div class="footer-nav-group">
+                    <h4>导航</h4>
+                    <a href="#works">作品展示</a>
+                    <a href="#about">关于我</a>
+                    <a href="#contact">联系方式</a>
+                </div>
+                <div class="footer-nav-group">
+                    <h4>社交</h4>
+                    <a href="https://github.com/zhangchunsheng" target="_blank">GitHub ↗</a>
+                    <a href="mailto:1097692918@qq.com">Email ↗</a>
+                    <a href="#contact">微信</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-text">© 2026 LUOMOR. ALL RIGHTS RESERVED.</div>
+                <div class="footer-social">
+                    <a href="https://github.com/zhangchunsheng" target="_blank" class="social-icon" title="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:1097692918@qq.com" class="social-icon" title="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M22 6L12 13L2 6"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="social-icon" title="WeChat">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.139.045c.133 0 .241-.108.241-.241 0-.06-.023-.118-.039-.177l-.326-1.233a.49.49 0 01.178-.553C23.002 18.504 24 16.774 24 14.835c0-3.164-3.129-5.753-7.062-5.977zm-2.07 2.342c.535 0 .969.44.969.983a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.543.434-.983.97-.983zm4.141 0c.535 0 .969.44.969.983a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.543.434-.983.969-.983z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部波浪装饰 -->
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C150,20 350,80 500,50 C650,20 850,80 1000,50 C1150,20 1350,80 1440,50 L1440,100 L0,100 Z" fill="rgba(139, 92, 246, 0.1)"/>
+                <path d="M0,60 C200,30 400,90 600,60 C800,30 1000,90 1200,60 C1300,45 1400,75 1440,60 L1440,100 L0,100 Z" fill="rgba(6, 182, 212, 0.05)"/>
+            </svg>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
