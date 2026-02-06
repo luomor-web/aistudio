@@ -1,0 +1,121 @@
+curl -fsSL https://openclaw.ai/install.sh | bash
+
+  咽 OpenClaw Installer
+  Works on Android. Crazy concept, we know.
+
+✓ Detected: linux
+→ Node.js v18.20.3 found, but v22+ required
+→ Installing Node.js via NodeSource...
+[sudo] password for zhangchunsheng:
+2026-02-06 17:50:25 - Cleaning up old repositories...
+2026-02-06 17:50:25 - Old repositories removed
+2026-02-06 17:50:25 - Supported architecture: x86_64
+2026-02-06 17:50:25 - Added N|Solid repository for LTS version: 22.x
+2026-02-06 17:50:25 - dnf available, updating...
+Repository baseos is listed more than once in the configuration
+Repository baseos-source is listed more than once in the configuration
+Repository appstream is listed more than once in the configuration
+Repository appstream-source is listed more than once in the configuration
+Repository rt is listed more than once in the configuration
+Repository rt-source is listed more than once in the configuration
+Repository resilientstorage is listed more than once in the configuration
+Repository resilientstorage-source is listed more than once in the configuration
+Node.js Packages for Linux RPM based distros - x86_64                                                                                             364 kB/s | 852 kB     00:02
+Last metadata expiration check: 0:00:01 ago on Fri 06 Feb 2026 17:50:26 CST.
+Metadata cache created.
+Repository baseos is listed more than once in the configuration
+Repository baseos-source is listed more than once in the configuration
+Repository appstream is listed more than once in the configuration
+Repository appstream-source is listed more than once in the configuration
+Repository rt is listed more than once in the configuration
+Repository rt-source is listed more than once in the configuration
+Repository resilientstorage is listed more than once in the configuration
+Repository resilientstorage-source is listed more than once in the configuration
+N|Solid Packages for Linux RPM based distros - x86_64                                                                                             333 kB/s | 586 kB     00:01
+Last metadata expiration check: 0:00:01 ago on Fri 06 Feb 2026 17:50:29 CST.
+Metadata cache created.
+2026-02-06 17:50:30 - Repository is configured and updated.
+2026-02-06 17:50:30 - You can use N|solid Runtime as a node.js alternative
+2026-02-06 17:50:30 - To install N|solid Runtime, run: dnf install nsolid -y
+2026-02-06 17:50:30 - Run 'dnf install nodejs -y' to complete the installation.
+Repository baseos is listed more than once in the configuration
+Repository baseos-source is listed more than once in the configuration
+Repository appstream is listed more than once in the configuration
+Repository appstream-source is listed more than once in the configuration
+Repository rt is listed more than once in the configuration
+Repository rt-source is listed more than once in the configuration
+Repository resilientstorage is listed more than once in the configuration
+Repository resilientstorage-source is listed more than once in the configuration
+Last metadata expiration check: 0:00:05 ago on Fri 06 Feb 2026 17:50:29 CST.
+Package nodejs-2:18.20.3-1nodesource.x86_64 is already installed.
+Dependencies resolved.
+==================================================================================================================================================================================
+ Package                             Architecture                        Version                                             Repository                                      Size
+==================================================================================================================================================================================
+Upgrading:
+ nodejs                              x86_64                              2:22.22.0-1nodesource                               nodesource-nodejs                               44 M
+
+Transaction Summary
+==================================================================================================================================================================================
+Upgrade  1 Package
+
+Total download size: 44 M
+Downloading Packages:
+nodejs-22.22.0-1nodesource.x86_64.rpm                                                                                                             6.2 MB/s |  44 MB     00:07
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                             6.2 MB/s |  44 MB     00:07
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                          1/1
+  Running scriptlet: nodejs-2:22.22.0-1nodesource.x86_64                                                                                                                      1/2
+Detected old npm client, removing...
+
+  Upgrading        : nodejs-2:22.22.0-1nodesource.x86_64                                                                                                                      1/2
+  Cleanup          : nodejs-2:18.20.3-1nodesource.x86_64                                                                                                                      2/2
+warning: file /usr/lib/node_modules/npm/node_modules/semver/node_modules: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/promise-inflight: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/pacote/lib/bin.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/node-gyp/node_modules/proc-log: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/negotiator: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/minizlib/node_modules: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/minizlib/index.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/minizlib/constants.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/minipass-json-stream: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/is-lambda: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/is-core-module: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/is-cidr/index.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/indent-string: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/hasown: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/function-bind: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/foreground-child/dist/mjs: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/foreground-child/dist/cjs: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/debug/node_modules: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/clean-stack: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/cidr-regex/index.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/builtins: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/aggregate-error: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/@tufjs/models: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/@sigstore/verify: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/@sigstore/sign: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/@sigstore/core: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/node_modules/@sigstore/bundle: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/lib/utils/web-auth.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/lib/utils/otplease.js: remove failed: No such file or directory
+warning: file /usr/lib/node_modules/npm/lib/utils/open-url-prompt.js: remove failed: No such file or directory
+
+  Running scriptlet: nodejs-2:18.20.3-1nodesource.x86_64                                                                                                                      2/2
+  Verifying        : nodejs-2:22.22.0-1nodesource.x86_64                                                                                                                      1/2
+  Verifying        : nodejs-2:18.20.3-1nodesource.x86_64                                                                                                                      2/2
+
+Upgraded:
+  nodejs-2:22.22.0-1nodesource.x86_64
+
+Complete!
+✓ Node.js installed
+✓ Git already installed
+→ Configuring npm for user-local installs...
+✓ npm configured for user installs
+→ Installing OpenClaw 2026.2.3-1...
