@@ -590,3 +590,45 @@ Missing Control UI assets. Build them with `pnpm ui:build` (auto-installs UI dep
 
  agent main | session main (openclaw-tui) | qwen-portal/coder-model | tokens 0/128k (0%)
 ;;────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────;;
+
+ openclaw config set gateway.controlUi.basePath https://openclaw.wepromo.cn
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+05:23:18 [plugins] feishu failed to load from /home/zhangchunsheng/.openclaw/extensions/feishu/index.ts: Error: Cannot find module 'zod'
+Require stack:
+- /data/home/zhangchunsheng/.openclaw/extensions/feishu/src/config-schema.ts
+
+咽 OpenClaw 2026.2.3-1 (d84eb46) — WhatsApp automation without the "please accept our new privacy policy".
+
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+│
+◇  Config warnings ──────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│  - plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may   │
+│    be overridden                                                                           │
+│    (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/ind  │
+│    ex.ts)                                                                                  │
+│                                                                                            │
+├────────────────────────────────────────────────────────────────────────────────────────────╯
+Config warnings:
+- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Updated gateway.controlUi.basePath. Restart the gateway to apply.
+
+openclaw gateway restart
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+05:24:59 [plugins] feishu failed to load from /home/zhangchunsheng/.openclaw/extensions/feishu/index.ts: Error: Cannot find module 'zod'
+Require stack:
+- /data/home/zhangchunsheng/.openclaw/extensions/feishu/src/config-schema.ts
+
+咽 OpenClaw 2026.2.3-1 (d84eb46) — End-to-end encrypted, drama-to-drama excluded.
+
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+│
+◇  Config warnings ──────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│  - plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may   │
+│    be overridden                                                                           │
+│    (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/ind  │
+│    ex.ts)                                                                                  │
+│                                                                                            │
+├────────────────────────────────────────────────────────────────────────────────────────────╯
+Restarted systemd service: openclaw-gateway.service

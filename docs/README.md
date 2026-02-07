@@ -20,4 +20,9 @@ Web UI: http://127.0.0.1:8010/                                                 â
 â”‚  Docs: https://docs.openclaw.ai/web/control-ui 
 
 https://openclaw.wepromo.cn/?token=fb98553bdee6c084939055200fb4f1f22e726fbc2c8aad6c
+
+disconnected (1008): pairing required
+
+openclaw config set gateway.controlUi.basePath https://openclaw.wepromo.cn
+openclaw gateway restart
 ```
