@@ -119,3 +119,474 @@ Complete!
 → Configuring npm for user-local installs...
 ✓ npm configured for user installs
 → Installing OpenClaw 2026.2.3-1...
+
+openclaw --help
+
+咽 OpenClaw 2026.2.3-1 (d84eb46) — The UNIX philosophy meets your DMs.
+
+Usage: openclaw [options] [command]
+
+Options:
+  -V, --version     output the version number
+  --dev             Dev profile: isolate state under ~/.openclaw-dev, default gateway port 19001, and shift derived ports (browser/canvas)
+  --profile <name>  Use a named profile (isolates OPENCLAW_STATE_DIR/OPENCLAW_CONFIG_PATH under ~/.openclaw-<name>)
+  --no-color        Disable ANSI colors
+  -h, --help        display help for command
+
+Commands:
+  setup             Initialize ~/.openclaw/openclaw.json and the agent workspace
+  onboard           Interactive wizard to set up the gateway, workspace, and skills
+  configure         Interactive prompt to set up credentials, devices, and agent defaults
+  config            Config helpers (get/set/unset). Run without subcommand for the wizard.
+  doctor            Health checks + quick fixes for the gateway and channels
+  dashboard         Open the Control UI with your current token
+  reset             Reset local config/state (keeps the CLI installed)
+  uninstall         Uninstall the gateway service + local data (CLI remains)
+  message           Send messages and channel actions
+  memory            Memory search tools
+  agent             Run an agent turn via the Gateway (use --local for embedded)
+  agents            Manage isolated agents (workspaces + auth + routing)
+  acp               Agent Control Protocol tools
+  gateway           Gateway control
+  daemon            Gateway service (legacy alias)
+  logs              Gateway logs
+  system            System events, heartbeat, and presence
+  models            Model configuration
+  approvals         Exec approvals
+  nodes             Node commands
+  devices           Device pairing + token management
+  node              Node control
+  sandbox           Sandbox tools
+  tui               Terminal UI
+  cron              Cron scheduler
+  dns               DNS helpers
+  docs              Docs helpers
+  hooks             Hooks tooling
+  webhooks          Webhook helpers
+  pairing           Pairing helpers
+  plugins           Plugin management
+  channels          Channel management
+  directory         Directory commands
+  security          Security helpers
+  skills            Skills management
+  update            CLI update helpers
+  completion        Generate shell completion script
+  status            Show channel health and recent session recipients
+  health            Fetch health from the running gateway
+  sessions          List stored conversation sessions
+  browser           Manage OpenClaw's dedicated browser (Chrome/Chromium)
+  help              display help for command
+
+Examples:
+  openclaw channels login --verbose
+    Link personal WhatsApp Web and show QR + connection logs.
+  openclaw message send --target +15555550123 --message "Hi" --json
+    Send via your web session and print JSON result.
+  openclaw gateway --port 18789
+    Run the WebSocket Gateway locally.
+  openclaw --dev gateway
+    Run a dev Gateway (isolated state/config) on ws://127.0.0.1:19001.
+  openclaw gateway --force
+    Kill anything bound to the default gateway port, then start it.
+  openclaw gateway ...
+    Gateway control via WebSocket.
+  openclaw agent --to +15555550123 --message "Run summary" --deliver
+    Talk directly to the agent using the Gateway; optionally send the WhatsApp reply.
+  openclaw message send --channel telegram --target @mychat --message "Hi"
+    Send via your Telegram bot.
+
+Docs: ;;https://docs.openclaw.ai/clidocs.openclaw.ai/cli;;
+
+OpenClaw onboarding
+│
+◇  Security ──────────────────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  Security warning — please read.                                                        │
+│                                                                                         │
+│  OpenClaw is a hobby project and still in beta. Expect sharp edges.                     │
+│  This bot can read files and run actions if tools are enabled.                          │
+│  A bad prompt can trick it into doing unsafe things.                                    │
+│                                                                                         │
+│  If you’re not comfortable with basic security and access control, don’t run OpenClaw.  │
+│  Ask someone experienced to help before enabling tools or exposing it to the internet.  │
+│                                                                                         │
+│  Recommended baseline:                                                                  │
+│  - Pairing/allowlists + mention gating.                                                 │
+│  - Sandbox + least-privilege tools.                                                     │
+│  - Keep secrets out of the agent’s reachable filesystem.                                │
+│  - Use the strongest available model for any bot with tools or untrusted inboxes.       │
+│                                                                                         │
+│  Run regularly:                                                                         │
+│  openclaw security audit --deep                                                         │
+│  openclaw security audit --fix                                                          │
+│                                                                                         │
+│  Must read: https://docs.openclaw.ai/gateway/security                                   │
+│                                                                                         │
+├─────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◆  I understand this is powerful and inherently risky. Continue?
+│  ● Yes / ○ No
+◆  Onboarding mode
+│  ● QuickStart (Configure details later via openclaw configure.)
+│  ○ Manual
+◆  What do you want to set up?
+│  ● Local gateway (this machine) (No gateway detected (ws://127.0.0.1:18789))
+│  ○ Remote gateway (info-only)
+◆  Model/auth provider
+│  ○ OpenAI
+│  ● Anthropic (setup-token + API key)
+│  ○ MiniMax
+│  ○ Moonshot AI (Kimi K2.5)
+│  ○ Google
+│  ○ OpenRouter
+│  ○ Qwen
+│  ○ Z.AI (GLM 4.7)
+│  ○ Copilot
+│  ○ Vercel AI Gateway
+│  ○ OpenCode Zen
+│  ○ Xiaomi
+│  ○ Synthetic
+│  ○ Venice AI
+│  ○ Cloudflare AI Gateway
+│  ○ Skip for now
+◇  Qwen auth method
+│  Qwen OAuth
+│
+◓  Starting Qwen OAuth…│
+◇  Qwen OAuth ─────────────────────────────────────────────────────────────────────────╮
+│                                                                                      │
+│  Open https://chat.qwen.ai/authorize?user_code=PWIF8ZBS&client=qwen-code to approve  │
+│  access.                                                                             │
+│  If prompted, enter the code PWIF8ZBS.                                               │
+│                                                                                      │
+├──────────────────────────────────────────────────────────────────────────────────────╯
+◇  Qwen OAuth complete
+│
+◇  Model configured ─────────────────────────────╮
+│                                                │
+│  Default model set to qwen-portal/coder-model  │
+│                                                │
+├────────────────────────────────────────────────╯
+│
+◇  Provider notes ──────────────────────────────────────────────────────────────────────╮
+│                                                                                       │
+│  Qwen OAuth tokens auto-refresh. Re-run login if refresh fails or access is revoked.  │
+│  Base URL defaults to https://portal.qwen.ai/v1. Override                             │
+│  models.providers.qwen-portal.baseUrl if needed.                                      │
+│                                                                                       │
+├───────────────────────────────────────────────────────────────────────────────────────╯
+│
+◆  Default model
+│  ● Keep current (qwen-portal/coder-model)
+│  ○ Enter model manually
+│  ○ qwen-portal/coder-model
+│  ○ qwen-portal/vision-model
+◇  Gateway port
+│  8010
+│
+Gateway bind
+│  LAN (0.0.0.0)
+│
+◇  Gateway auth
+│  ● Yes / ○ No
+└
+
+│  Token
+│
+◇  Tailscale exposure
+│  Off
+│
+◇  Gateway token (blank to generate)
+│
+│
+◇  Channel status ────────────────────────────╮
+│                                             │
+│  Telegram: not configured                   │
+│  WhatsApp: not configured                   │
+│  Discord: not configured                    │
+│  Google Chat: not configured                │
+│  Slack: not configured                      │
+│  Signal: not configured                     │
+│  iMessage: not configured                   │
+│  Feishu: install plugin to enable           │
+│  Google Chat: install plugin to enable      │
+│  Nostr: install plugin to enable            │
+│  Microsoft Teams: install plugin to enable  │
+│  Mattermost: install plugin to enable       │
+│  Nextcloud Talk: install plugin to enable   │
+│  Matrix: install plugin to enable           │
+│  BlueBubbles: install plugin to enable      │
+│  LINE: install plugin to enable             │
+│  Zalo: install plugin to enable             │
+│  Zalo Personal: install plugin to enable    │
+│  Tlon: install plugin to enable             │
+│                                             │
+├─────────────────────────────────────────────╯
+│
+◇  Configure chat channels now?
+│  Yes
+How channels work ─────────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  DM security: default is pairing; unknown DMs get a pairing code.                       │
+│  Approve with: openclaw pairing approve <channel> <code>                                │
+│  Public DMs require dmPolicy="open" + allowFrom=["*"].                                  │
+│  Multi-user DMs: set session.dmScope="per-channel-peer" (or "per-account-channel-peer"  │
+│  for multi-account channels) to isolate sessions.                                       │
+│  Docs: ;;https://docs.openclaw.ai/start/pairingstart/pairing;;                  │
+│                                                                                         │
+│  Telegram: simplest way to get started — register a bot with @BotFather and get going.  │
+│  WhatsApp: works with your own number; recommend a separate phone + eSIM.               │
+│  Discord: very well supported right now.                                                │
+│  Google Chat: Google Workspace Chat app with HTTP webhook.                              │
+│  Slack: supported (Socket Mode).                                                        │
+│  Signal: signal-cli linked device; more setup (David Reagans: "Hop on Discord.").       │
+│  iMessage: this is still a work in progress.                                            │
+│  ○ WhatsApp (QR link)
+│  ○ Discord (Bot API)
+│  ○ Google Chat (Chat API)
+│  ○ Slack (Socket Mode)
+│  ○ Signal (signal-cli)
+│  ○ iMessage (imsg)
+│  ○ Feishu (Lark Open Platform)
+│  ○ Nostr (NIP-04 DMs)
+│  ○ Microsoft Teams (Bot Framework)
+│  ○ Mattermost (plugin)
+│  ○ Nextcloud Talk (self-hosted)
+│  ○ Matrix (plugin)
+│  ○ BlueBubbles (macOS app)
+│  ○ LINE (Messaging API)
+│  ○ Zalo (Bot API)
+│  ○ Zalo (Personal Account)
+│  ○ Tlon (Urbit)
+│  ○ Finished
+◇  Channel setup ───────────────────────────╮
+│                                           │
+│  feishu does not support onboarding yet.  │
+│                                           │
+├───────────────────────────────────────────╯
+│
+◇  Select a channel
+│  Finished
+Config warnings:
+- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Updated ~/.openclaw/openclaw.json
+Workspace OK: ~/.openclaw/workspace
+Sessions OK: ~/.openclaw/agents/main/sessions
+│
+◇  Skills status ────────────╮
+│                            │
+│  Eligible: 3               │
+│  Missing requirements: 47  │
+│  Blocked by allowlist: 0   │
+│                            │
+├────────────────────────────╯
+│
+◇  Configure skills now? (recommended)
+│  Yes
+│
+◇  Homebrew recommended ──────────────────────────────────────────────────────────╮
+│                                                                                 │
+│  Many skill dependencies are shipped via Homebrew.                              │
+│  Without brew, you'll need to build from source or download releases manually.  │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Show Homebrew install command?
+│  Yes
+│
+◇  Homebrew install ─────────────────────────────────────────────────────╮
+│                                                                        │
+│  Run:                                                                  │
+│  /bin/bash -c "$(curl -fsSL                                            │
+│  https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Preferred node manager for skill installs
+│  npm
+│
+◆  Install missing skill dependencies
+│  ◻ Skip for now (Continue without installing dependencies)
+│  ◻  1password
+│  ◻  apple-notes
+│  ◻ ⏰ apple-reminders
+│  ◻  bear-notes
+│  ◻  bird
+│  ◻  blogwatcher
+│  ◻ 𢡄 blucli
+│  ◻  camsnap
+│  ◻ 里 clawhub
+│  ◻ ️ eightctl
+│  ◻ ♊️ gemini
+│  ◻ 鱗 gifgrep
+│  ◻  github
+│  ◻  gog
+│  ◻  goplaces
+│  ◻  himalaya
+│  ◻  imsg
+│  ◻  mcporter
+│  ◻  model-usage
+│  ◻  nano-banana-pro
+│  ◻  nano-pdf
+│  ◻  obsidian
+│  ◻ ️ openai-whisper
+│  ◻  openhue
+│  ◻ 刺 oracle
+│  ◻  ordercli
+│  ◻  peekaboo
+│  ◻ ️ sag
+│  ◻  songsee
+│  ...
+◇  Install missing skill dependencies
+│  Skip for now
+│
+◇  Set GOOGLE_PLACES_API_KEY for goplaces?
+│  No
+│
+◇  Set GOOGLE_PLACES_API_KEY for local-places?
+│  No
+│
+◇  Set GEMINI_API_KEY for nano-banana-pro?
+│  No
+│
+◇  Set NOTION_API_KEY for notion?
+│  No
+│
+◇  Set OPENAI_API_KEY for openai-image-gen?
+│  No
+│
+◇  Set OPENAI_API_KEY for openai-whisper-api?
+│  No
+│
+◇  Set ELEVENLABS_API_KEY for sag?
+│  No
+│
+◇  Hooks ──────────────────────────────────────────────────────────╮
+│                                                                  │
+│  Hooks let you automate actions when agent commands are issued.  │
+│  Example: Save session context to memory when you issue /new.    │
+│                                                                  │
+│  Learn more: https://docs.openclaw.ai/hooks                      │
+│                                                                  │
+├──────────────────────────────────────────────────────────────────╯
+│
+◇  No Hooks Available ─────────────────────────────────────────────────────╮
+│                                                                          │
+│  No eligible hooks found. You can configure hooks later in your config.  │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+Config warnings:
+- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+│
+◇  Systemd ────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                          │
+│  Linux installs use a systemd user service by default. Without lingering, systemd stops  │
+│  the user session on logout/idle and kills the Gateway.                                  │
+│  Enabling lingering now (may require sudo; writes /var/lib/systemd/linger).              │
+│                                                                                          │
+├──────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Systemd ───────────────────────────────────────╮
+│                                                 │
+│  Enabled systemd lingering for zhangchunsheng.  │
+│                                                 │
+├─────────────────────────────────────────────────╯
+│
+◆  Install Gateway service (recommended)
+│  ● Yes / ○ No
+◇  Install Gateway service (recommended)
+│  Yes
+│
+◆  Gateway service runtime
+│  ● Node (recommended) (Required for WhatsApp + Telegram. Bun can corrupt memory on reconnect.)
+◐  Installing Gateway service…
+Installed systemd service: /home/zhangchunsheng/.config/systemd/user/openclaw-gateway.service
+◇  Gateway service installed.
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id detected; later plugin may be overridden (/data/home/zhangchunsheng/.npm-global/lib/node_modules/openclaw/extensions/feishu/index.ts)
+│
+◇
+Agents: main (default)
+Heartbeat interval: 30m (main)
+Session store (main): /home/zhangchunsheng/.openclaw/agents/main/sessions/sessions.json (0 entries)
+Missing Control UI assets. Build them with `pnpm ui:build` (auto-installs UI deps).
+│
+◇  Optional apps ────────────────────────╮
+│                                        │
+│  Add nodes for extra features:         │
+│  - macOS app (system + notifications)  │
+│  - iOS app (camera/canvas)             │
+│  - Android app (camera/canvas)         │
+│                                        │
+├────────────────────────────────────────╯
+│
+◇  Control UI ────────────────────────────────────────────────────────────────────╮
+│                                                                                 │
+│  Web UI: http://127.0.0.1:8010/                                                 │
+│  Web UI (with token):                                                           │
+│  http://127.0.0.1:8010/?token=fb98553bdee6c084939055200fb4f1f22e726fbc2c8aad6c  │
+│  Gateway WS: ws://127.0.0.1:8010                                                │
+│  Gateway: reachable                                                             │
+│  Docs: https://docs.openclaw.ai/web/control-ui                                  │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Start TUI (best option!) ─────────────────────────────────╮
+│                                                            │
+│  This is the defining action that makes your agent you.    │
+│  Please take your time.                                    │
+│  The more you tell it, the better the experience will be.  │
+│  We will send: "Wake up, my friend!"                       │
+│                                                            │
+├────────────────────────────────────────────────────────────╯
+│
+◇  Token ────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│  Gateway token: shared auth for the Gateway + Control UI.                              │
+│  Stored in: ~/.openclaw/openclaw.json (gateway.auth.token) or OPENCLAW_GATEWAY_TOKEN.  │
+│  Web UI stores a copy in this browser's localStorage (openclaw.control.settings.v1).   │
+│  Get the tokenized link anytime: openclaw dashboard --no-open                          │
+│                                                                                        │
+├────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◆  How do you want to hatch your bot?
+│  ● Hatch in TUI (recommended)
+│  ○ Open the Web UI
+│  ○ Do this later
+└
+;; The more you tell it, the better the experience will be.  │
+;;
+ ⠋ sending • 0s | gateway connected
+;;───────────────────────────────────────────────────────────╯
+ agent main | session main | unknown | tokens ?/128k
+;; Token ────────────────────────────────────────────────────────────────────────────────╮
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ⠋ dillydallying… • 0s | gateway connected
+ ⠙ dillydallying… • 0s | gateway connected
+ ⠙ dillydallying… • 0s | gateway connected
+ ⠹ dillydallying… • 0s | gateway connected
+ ⠹ running • 0s | gateway connected
+ ⠸ running • 0s | gateway connected
+ ⠼ running • 0s | gateway connected
+ ⠴ running • 0s | gateway connected
+ ⠦ running • 0s | gateway connected
+ Hey
+;;claw/extensions/feishu/index.ts)
+;;
+ ⠴ streaming • 0s | gateway connected
+;;
+ agent main | session main | unknown | tokens ?/128k
+;;
+ Hey. I just came online. Who am I
+ gateway connected | idle
+;; streaming • 0s | gateway connected
+ agent main | session main | unknown | tokens ?/128k
+;;──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── Hey. I just came online. Who am I? Who are you?
+;;
+
+ agent main | session main (openclaw-tui) | qwen-portal/coder-model | tokens 0/128k (0%)
+;;────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────;;
