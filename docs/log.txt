@@ -632,3 +632,9 @@ Config warnings:\n- plugins.entries.feishu: plugin feishu: duplicate plugin id d
 │                                                                                            │
 ├────────────────────────────────────────────────────────────────────────────────────────────╯
 Restarted systemd service: openclaw-gateway.service
+
+openclaw gateway restart
+
+咽 OpenClaw 2026.2.3-1 (d84eb46) — I run on caffeine, JSON5, and the audacity of "it worked on my machine."
+
+Restarted systemd service: openclaw-gateway.service
